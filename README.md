@@ -18,8 +18,16 @@
   </a>
 </p>
 
+<p align="center">
+  <img src="assets/visual_planning.png" width="75%">
+</p>
 
-## 📑 Citation
+### About
+We introduces *Visual Planning*, a new reasoning paradigm where planning is conducted entirely through sequences of images, without relying on language. Unlike traditional multimodal models that use visual input but still reason in text, our approach enables models to “think” directly in the visual domain. We propose a reinforcement learning framework, VPRL, to train large vision models for image-based planning tasks. Our method achieves significant gains over language-based baselines on spatial navigation tasks and opens a new direction for visual reasoning research.
+
+
+
+### 📑 Citation
 
 If you find Visual Planning useful for your research and applications, please cite using this BibTeX:
 
