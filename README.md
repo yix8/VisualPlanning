@@ -35,8 +35,13 @@ We propose a novel two-stage training framework that applies RL to achieve visua
 ### 📊 Evaluation
 We evaluate VPRL across three diverse visual planning environments:
 
+
 -  **FrozenLake:**  
   A stochastic gridworld where the agent is supposed to start from the designated position and find its way to the destination safely without falling into the 'holes'
+
+<div align="center">
+  <img src="assets/frozenlake.gif" width="250">
+</div>
 
 -  **Maze:**  
   Given an initial image describing the maze layout, the model is supposed to go through the maze from the starting point (green point) to the destination (red flag).
@@ -44,6 +49,9 @@ We evaluate VPRL across three diverse visual planning environments:
 -  **MiniBehaviour:**  
   The agent is first required to reach the printer from the starting point and pick it up. After that, the agent should go to the table and drop the printer.
 
+### 🤗 Models and Datasets
+
+We currently provide the evaluation code to support reproducibility. The model checkpoints and datasets will be released in the near future.
 
 ### 📑 Citation
 
