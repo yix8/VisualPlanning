@@ -18,11 +18,17 @@
   </a>
 </p>
 
+
+<div align="center">
+  <img src="assets/frozenlake.gif" width="250">
+  <img src="assets/maze.gif" width="250">
+</div>
+
+### 💡 Overview
 <p align="center">
   <img src="assets/visual_planning.png" width="75%">
 </p>
 
-### 💡 Overview
 We introduces *Visual Planning*, a new reasoning paradigm where planning is conducted entirely through sequences of images, without relying on language. Unlike traditional multimodal models that use visual input but still reason in text, our approach enables models to "think" directly in the visual domain. We propose a reinforcement learning framework, VPRL, to train large vision models for image-based planning tasks. Our method achieves significant gains over language-based baselines on spatial navigation tasks and opens a new direction for visual reasoning research.
 
 
@@ -38,10 +44,6 @@ We evaluate VPRL across three diverse visual planning environments:
 
 -  **FrozenLake:**  
   A stochastic gridworld where the agent is supposed to start from the designated position and find its way to the destination safely without falling into the 'holes'
-
-<div align="center">
-  <img src="assets/frozenlake.gif" width="250">
-</div>
 
 -  **Maze:**  
   Given an initial image describing the maze layout, the model is supposed to go through the maze from the starting point (green point) to the destination (red flag).
