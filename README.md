@@ -23,7 +23,7 @@
 </p>
 
 ### 💡 Overview
-We introduces *Visual Planning*, a new reasoning paradigm where planning is conducted entirely through sequences of images, without relying on language. Unlike traditional multimodal models that use visual input but still reason in text, our approach enables models to "think" directly in the visual domain. We propose a reinforcement learning framework, VPRL, which significantly outperforms language-based baselines on spatial navigation tasks.
+We introduces *Visual Planning*, a new reasoning paradigm where planning is conducted entirely through sequences of images, without relying on language. Unlike traditional multimodal models that use visual input but still reason in text, our approach enables models to "think" directly in the visual domain. We propose a reinforcement learning framework, **VPRL**, which significantly outperforms language-based baselines on spatial navigation tasks.
 
 
 ### ✨ Method
