@@ -66,8 +66,6 @@ def collate_fn(batch):
     }
 
 def show_stats(base_dir):
-    # Define the base directory
-    # base_dir = "test/sft_evaluation_result"
 
     # Data structure for statistics
     level_stats = defaultdict(lambda: {
@@ -107,8 +105,6 @@ def show_stats(base_dir):
                             if data["complete"] is True:
                                 level_stats[level]["true"] += 1
                                 level_stats[level]["true_action_lengths"].append(action_list_length)
-                                # if action_list_length == 20:
-                                #     print(subdir)
  
                             elif data["complete"] is False:
                                 level_stats[level]["false"] += 1
@@ -116,12 +112,8 @@ def show_stats(base_dir):
                                 level_stats[level]["false_action_lengths"].append(action_list_length)
                                 if all(action[1] != "invalid" for action in data['action_list']):
                                     level_stats[level]["all_actions_valid_false"].append(subdir)
-                                    # if action_list_length == 20:
-                                    #     print(subdir)
                                 else:
                                     level_stats[level]["any_actions_invalid_false"].append(subdir)
-                                    if action_list_length == 12:
-                                        print(subdir)
 
                             for action in data['action_list']:
                                 if action[1] != "invalid":
@@ -149,11 +141,6 @@ def show_stats(base_dir):
         print(f"  - Number of Valid: {level_stats[level]['valid']}")
         print(f"  - Number of Invalid: {level_stats[level]['invalid']}")
 
-        # Print the list of directories where "complete" is False in this level
-        # if level_stats[level]["false_dirs"]:
-        #     print(f"  - Directories with incomplete path:")
-        #     print(f"    {level_stats[level]['false_dirs']}")
-        #     false_list.extend(level_stats[level]["false_dirs"])
         if level_stats[level]["any_actions_invalid_false"]:
             print(f"  - Directories with any invalid path:")
             print(f"    {level_stats[level]['any_actions_invalid_false']}")
@@ -178,20 +165,11 @@ def show_stats(base_dir):
                 percentage = (count / len(false_action_lengths)) * 100
                 print(f"    Length {length}: {count} ({percentage:.2f}%)")
 
-    # # sotre this list in a file
-    # with open("false_list.txt", "w") as f:
-    #     for item in false_list:
-    #         f.write("%s\n" % item)
-    # # read this file as a list
-    # with open("false_list.txt", "r", encoding="utf-8") as f:
-    #     test_false_list = f.read().splitlines()
+
     print(f"Average accuracy: {sum(acc)/len(acc):.2f}%")
     return false_list
 
 def show_stats_mini(base_dir):
-    # Define the base directory
-    # base_dir = "test/sft_evaluation_result"
-
     # Data structure for statistics
     level_stats = defaultdict(lambda: {
         "true": 0,
@@ -234,15 +212,12 @@ def show_stats_mini(base_dir):
                             level_stats[level]["true"] += 1
                             level_stats[level]["true_action_lengths"].append(action_list_length)
 
-
                         elif data["complete"] is False:
                             level_stats[level]["false"] += 1
                             level_stats[level]["false_dirs"].append(subdir)
                             level_stats[level]["false_action_lengths"].append(action_list_length)
                             if all(action[1] != "invalid" for action in data['action_list']):
                                 level_stats[level]["all_actions_valid_false"].append(subdir)
-                                if action_list_length == 9:
-                                    print(subdir)
 
                             else:
                                 level_stats[level]["any_actions_invalid_false"].append(subdir)
@@ -272,11 +247,6 @@ def show_stats_mini(base_dir):
         print(f"  - Number of Valid: {level_stats[level]['valid']}")
         print(f"  - Number of Invalid: {level_stats[level]['invalid']}")
 
-        # Print the list of directories where "complete" is False in this level
-        # if level_stats[level]["false_dirs"]:
-        #     print(f"  - Directories with incomplete path:")
-        #     print(f"    {level_stats[level]['false_dirs']}")
-        #     false_list.extend(level_stats[level]["false_dirs"])
         if level_stats[level]["any_actions_invalid_false"]:
             print(f"  - Directories with any invalid path:")
             print(f"    {level_stats[level]['any_actions_invalid_false']}")
@@ -310,13 +280,6 @@ def show_stats_mini(base_dir):
     else:
         print("No false completions found.")
         
-    # # sotre this list in a file
-    # with open("false_list.txt", "w") as f:
-    #     for item in false_list:
-    #         f.write("%s\n" % item)
-    # # read this file as a list
-    # with open("false_list.txt", "r", encoding="utf-8") as f:
-    #     test_false_list = f.read().splitlines()
 
     return false_list
 
@@ -400,7 +363,6 @@ def evaluate_frozen_or_maze(cfg: DictConfig):
         meta = batch["meta"][0]
         expected_move = 1 if cfg.is_filter else meta["distance_map"][str(input_state)]
 
-        # layout_str = "\n".join(["".join(row) for row in meta['layout']])
         log.info(f"\nEvaluating env {idx}\nStart pos: {input_state}, Expected move: {expected_move}")
         
         new_tokens = [input_ids]
@@ -575,7 +537,6 @@ def evaluate_minibehaviour(cfg: DictConfig):
         input_info = batch["input_state"][0] if cfg.is_filter else batch["input_state"][0][0]
         expected_move = 1 if cfg.is_filter else len(batch["input_state"][0])-1
 
-        # layout_str = "\n".join(["".join(row) for row in meta['layout']])
         log.info(f"\nEvaluating env: Level {level}, Data {data_id}\nStart pos: {input_info}, Expected move: {expected_move}")
         
         new_tokens = [input_ids]
@@ -592,7 +553,6 @@ def evaluate_minibehaviour(cfg: DictConfig):
                     pad_token_id=8192,
                     max_new_tokens=256,
                     do_sample=False,
-                    # temperature=temperature,
                     suppress_tokens=list(range(8192, model.vocab_size)),
                 )
                 input_ids = output_ids[:, -256: ]
