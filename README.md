@@ -9,7 +9,7 @@
 
 ## 📑 Citation
 
-If you find MMR1 useful for your research and applications, please cite using this BibTeX:
+If you find Visual Planning useful for your research and applications, please cite using this BibTeX:
 
 ```bibtex
 @misc{xu2025visualplanningletsthink,
