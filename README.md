@@ -6,9 +6,17 @@
 <h5 align="center"> If you find this project interesting, please give us a star ⭐ on GitHub to support us. 🙏🙏 </h2>
 
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv-b5212f.svg?logo=arxiv)](https://arxiv.org/abs/2505.11409)
-[![Paper](https://img.shields.io/badge/Paper-Hugging%20Face-yellow?logo=huggingface)](https://huggingface.co/papers/2505.11409)
-[![License](https://img.shields.io/badge/LICENSE-MIT-green.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <a href="https://arxiv.org/abs/2505.11409">
+    <img src="https://img.shields.io/badge/Paper-arXiv-b5212f.svg?logo=arxiv" />
+  </a>
+  <a href="https://huggingface.co/papers/2505.11409">
+    <img src="https://img.shields.io/badge/Paper-Hugging%20Face-yellow?logo=huggingface" />
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/LICENSE-MIT-green.svg" />
+  </a>
+</p>
 
 
 ## 📑 Citation
