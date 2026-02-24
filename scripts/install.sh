@@ -13,9 +13,9 @@ sudo apt install git-lfs
 git lfs install
 
 echo "Cloning Dataset."
-git clone https://huggingface.co/datasets/xuyi499307483/SFT_random_frozen dataset/frozenlake/tokenized_dataset/SFT_random
-git clone https://huggingface.co/datasets/xuyi499307483/SFT_random_maze dataset/maze/tokenized_dataset/SFT_random
-git clone https://huggingface.co/datasets/xuyi499307483/SFT_random_mini dataset/minibehaviour/tokenized_dataset/SFT_random
+git clone https://huggingface.co/datasets/yixu1/SFT_random_frozen dataset/frozenlake/tokenized_dataset/SFT_random
+git clone https://huggingface.co/datasets/yixu1/SFT_random_maze dataset/maze/tokenized_dataset/SFT_random
+git clone https://huggingface.co/datasets/yixu1/SFT_random_mini dataset/minibehaviour/tokenized_dataset/SFT_random
 
 echo "Cloning Models."
 mkdir -p models
