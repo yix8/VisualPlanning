@@ -28,7 +28,7 @@ case "$TASK" in
     DATASET_PTH="dataset/minibehaviour/tokenized_dataset/SFT/train_dataset.jsonl"
     MODEL_PATH="./models/LVM_ckpts"
     OUTPUT_DIR="./models/minibehaviour/SFT_LVM_optimal_PEFT_ckpts"
-    RUN_NAME="SFT_LVM_optimal_maze"
+    RUN_NAME="SFT_LVM_optimal_minibehaviour"
     NUM_EPOCHS=30
     ;;
   *)

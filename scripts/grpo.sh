@@ -15,21 +15,21 @@ case "$TASK" in
     DATASET_PTH="dataset/frozenlake/tokenized_dataset/SFT/train_dataset.jsonl"
     MODEL_PATH="./models/frozenlake/SFT_LVM_random_merged_ckpts"
     OUTPUT_DIR="./models/frozenlake/GRPO_LVM_random_PEFT_ckpts"
-    RUN_NAME="GRPO_LVM_random"
+    RUN_NAME="GRPO_LVM_random_frozenlake"
     ;;
   maze)
     TRAIN_SCRIPT="train_rl_maze.py"
     DATASET_PTH="dataset/maze/tokenized_dataset/SFT/train_dataset.jsonl"
     MODEL_PATH="./models/maze/SFT_LVM_random_merged_ckpts"
     OUTPUT_DIR="./models/maze/GRPO_LVM_random_PEFT_ckpts"
-    RUN_NAME="GRPO_LVM_random"
+    RUN_NAME="GRPO_LVM_random_maze"
     ;;
   minibehaviour)
     TRAIN_SCRIPT="train_rl_mini.py"
     DATASET_PTH="dataset/minibehaviour/tokenized_dataset/SFT/train_dataset.jsonl"
     MODEL_PATH="./models/minibehaviour/SFT_LVM_random_merged_ckpts"
     OUTPUT_DIR="./models/minibehaviour/GRPO_LVM_random_PEFT_ckpts"
-    RUN_NAME="GRPO_LVM_random"
+    RUN_NAME="GRPO_LVM_random_minibehaviour"
     ;;
   *)
     echo "Unknown task: $TASK"
