@@ -91,7 +91,7 @@ bash scripts/sft_optimal.sh minibehaviour
 
 #### VPRL Stage 1
 
-Stage 1 performs policy initialization with random trajectory supervision:
+`Stage 1` performs policy initialization with random trajectory supervision:
 
 ```bash
 bash scripts/sft_random.sh frozenlake
@@ -101,7 +101,7 @@ bash scripts/sft_random.sh minibehaviour
 
 #### VPRL Stage 2
 
-Stage 2 performs reinforcement learning with GRPO:
+`Stage 2` performs reinforcement learning with GRPO:
 
 ```bash
 bash scripts/grpo.sh frozenlake
