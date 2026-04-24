@@ -67,8 +67,8 @@ We release the following model checkpoints on Hugging Face:
 Please first create a conda environment:
 
 ```bash
-conda create -n searchr1 python=3.9
-conda activate searchr1
+conda create -n visualthinking python=3.12.3
+conda activate visualthinking
 ```
 
 Then run:
