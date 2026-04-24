@@ -12,8 +12,8 @@ fi
 case "$TASK" in
   frozenlake)
     DATASET_PTH="dataset/frozenlake/tokenized_dataset/SFT/train_dataset.jsonl"
-    MODEL_PATH="./models/SFT_LVM_random_merged_ckpts"
-    OUTPUT_DIR="./models/SFT_LVM_optimal_PEFT_ckpts"
+    MODEL_PATH="./models/LVM_ckpts"
+    OUTPUT_DIR="./models/frozenlake/SFT_LVM_optimal_PEFT_ckpts"
     RUN_NAME="SFT_LVM_optimal_frozenlake"
     NUM_EPOCHS=30
     ;;
