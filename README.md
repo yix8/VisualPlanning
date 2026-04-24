@@ -24,7 +24,7 @@
 
 ### 📰 News
 
-- **[2026.04]** We open-source the training datasets and training scripts for Visual Planning.
+- **[2026.04]** We release the training datasets and training scripts for Visual Planning.
 - **[2026.02]** Our paper *Visual Planning: Let's Think Only with Images* was accepted as an ICLR Oral.
 
 
