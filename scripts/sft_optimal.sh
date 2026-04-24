@@ -1,0 +1,46 @@
+#!/bin/bash
+
+set -euo pipefail
+
+TASK="${1:-}"
+
+if [ -z "$TASK" ]; then
+  echo "Usage: bash scripts/sft_optimal.sh <frozenlake|maze|minibehaviour>"
+  exit 1
+fi
+
+case "$TASK" in
+  frozenlake)
+    DATASET_PTH="dataset/frozenlake/tokenized_dataset/SFT/train_dataset.jsonl"
+    MODEL_PATH="./models/SFT_LVM_random_merged_ckpts"
+    OUTPUT_DIR="./models/SFT_LVM_optimal_PEFT_ckpts"
+    RUN_NAME="SFT_LVM_optimal_frozenlake"
+    NUM_EPOCHS=30
+    ;;
+  maze)
+    DATASET_PTH="dataset/maze/tokenized_dataset/SFT/train_dataset.jsonl"
+    MODEL_PATH="./models/LVM_ckpts"
+    OUTPUT_DIR="./models/maze/SFT_LVM_optimal_PEFT_ckpts"
+    RUN_NAME="SFT_LVM_optimal_maze"
+    NUM_EPOCHS=30
+    ;;
+  minibehaviour)
+    DATASET_PTH="dataset/minibehaviour/tokenized_dataset/SFT/train_dataset.jsonl"
+    MODEL_PATH="./models/LVM_ckpts"
+    OUTPUT_DIR="./models/minibehaviour/SFT_LVM_optimal_PEFT_ckpts"
+    RUN_NAME="SFT_LVM_optimal_maze"
+    NUM_EPOCHS=30
+    ;;
+  *)
+    echo "Unknown task: $TASK"
+    echo "Expected one of: frozenlake, maze, minibehaviour"
+    exit 1
+    ;;
+esac
+
+python train_sft.py \
+  SFT.dataset_pth="$DATASET_PTH" \
+  SFT.model_path="$MODEL_PATH" \
+  SFT.num_train_epochs="$NUM_EPOCHS" \
+  SFT.output_dir="$OUTPUT_DIR" \
+  SFT.run_name="$RUN_NAME"

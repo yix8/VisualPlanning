@@ -1,0 +1,27 @@
+SFT:
+  dataset_pth: null
+  torch_device: "cuda"
+  model_path: null
+  use_lora: True
+  dtype: "bfloat16"
+  seed: 42
+  output_dir: null
+  per_device_train_batch_size: 8
+  num_train_epochs: 10
+  run_name: null
+GRPO:
+  dataset_pth: null
+  torch_device: "cuda"
+  model_path: null
+  use_lora: True
+  lora_path: null
+  dtype: "bfloat16"
+  seed: 42
+  lr: 5e-5
+  num_train_epochs: 10
+  num_batch: 1
+  num_generations: 10
+  output_dir: null
+  run_name: null
+  start_beta: 0.001
+  end_beta: 0.001
